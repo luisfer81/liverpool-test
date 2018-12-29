@@ -17,7 +17,7 @@ class Productos {
     var precioDescuento : Double = 0.0
     var imagen : String = ""
   
-    
+    //Inicializo Variables de Modelo
     init(nombreProducto : String, precioNoDescuento: Double, precioDescuento: Double, imagen: String) {
         self.nombreProducto = nombreProducto
         self.precioNoDescuento = precioNoDescuento

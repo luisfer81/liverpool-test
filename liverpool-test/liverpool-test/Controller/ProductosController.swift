@@ -47,6 +47,7 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customProductoCell", for: indexPath) as! ProductoCell
         
+        // Verificar si el precio de descuento es mayo a cero estonces mostrarlo, si no solo mostrar el precio sin descuento
         if arrayProductos[indexPath.row].precioDescuento > 0 {
             cell.precioNoDescuento.isHidden = false
             cell.precioDescuento.text = "\(arrayProductos[indexPath.row].precioDescuento)"
@@ -57,6 +58,7 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         cell.productoNombre.text = arrayProductos[indexPath.row].nombreProducto
+        //COMO PLACEHOLDER USE UNA IMAGEN DE UNA BOLSA QUE DESCARGUE DE UNA URL
         cell.productoImagen.sd_setImage(with: URL(string: arrayProductos[indexPath.row].imagen), placeholderImage: UIImage(named: "prueba.png"))
         
         return cell
@@ -91,13 +93,19 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    /////////////////////////////////
     
+    //MARK: - Metodos SearchBar
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         arrayProductos.removeAll()
         busqueda = barraBusqueda.text!
         paginas = 1
         cargaDatos(pagina: paginas, busqueda: busqueda)
     }
+    
+    /////////////////////////////////////////
+    
+    //MARK: - Funcion para la carga de datos con paginacion.
     
     func cargaDatos(pagina : Int, busqueda: String) {
         let params : [String : String] = ["search-string" : busqueda, "page-number" : "\(pagina)"]
@@ -109,6 +117,7 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
                 if let tempResult = productoJSON["plpResults"].dictionary {
                     if let record = tempResult["records"]?.arrayValue {
                         if record.count > 0 {
+                            //Ciclo para recorrer el array que nos devuelve la bsuqueda y agregar datos al arrayProducots
                             for i in 1...record.count {
                                
                                 self.arrayProductos.append(Productos.init(nombreProducto: record[i-1]["productDisplayName"].stringValue, precioNoDescuento: Double(record[i-1]["listPrice"].stringValue)!, precioDescuento: Double(record[i-1]["promoPrice"].stringValue)!, imagen: record[i-1]["smImage"].stringValue))
@@ -134,6 +143,10 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    
+    ///////////////////////////////
+    
+    //MARK: -Funciono que remueve los datos del array de productos, en caso de no encontrar un producto
     func productoNoEncontrado() {
         arrayProductos.removeAll()
         mensaje = "Producto no encontrado prueba con otra busqueda"

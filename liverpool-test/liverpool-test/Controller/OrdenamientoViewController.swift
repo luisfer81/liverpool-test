@@ -14,6 +14,7 @@ class OrdenamientoViewController: UIViewController, UITableViewDelegate, UITable
     var parametro = ""
     @IBOutlet weak var tablaFiltrado: UITableView!
     
+    //Array de prueba para mostrar las opciones de filtrado
     let arrayOpciones = ["Predefinida", "Menor Precio", "Mayor Precio"]
     
     override func viewDidLoad() {
@@ -25,6 +26,8 @@ class OrdenamientoViewController: UIViewController, UITableViewDelegate, UITable
 
         
     }
+    
+    //MARK: - Funciones del table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOpciones.count
@@ -46,7 +49,7 @@ class OrdenamientoViewController: UIViewController, UITableViewDelegate, UITable
         tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
     }
     
-    
+    //Accion del boton filtrado
     @IBAction func filtrado(_ sender: Any) {
       navigationController?.popToRootViewController(animated: true)
         
@@ -54,6 +57,8 @@ class OrdenamientoViewController: UIViewController, UITableViewDelegate, UITable
     
 }
 
+
+// MARK: - Clase de la celda de ordenamiento
 class OrdenamientoCell: UITableViewCell {
     
     
