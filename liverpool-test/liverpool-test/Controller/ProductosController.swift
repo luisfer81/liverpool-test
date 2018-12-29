@@ -21,6 +21,8 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
     var paginas = 1
     var busqueda = ""
     var mensaje = ""
+    var labelColor = UILabel()
+    var valorInicial = 7
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,28 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.precioDescuento.text = "$ \(arrayProductos[indexPath.row].precioNoDescuento)"
             cell.precioNoDescuento.isHidden = true
         }
+        
+        valorInicial = 7
+        for valor in arrayProductos[indexPath.row].arrayColor.arrayValue {
+            
+            labelColor = UILabel(frame: CGRect(x: valorInicial, y: 130, width: 15, height: 15))
+            labelColor.textColor = UIColor.white
+            labelColor.font = UIFont.systemFont(ofSize: 24.0)
+            labelColor.layer.cornerRadius = 15.0 / 2
+            labelColor.layer.borderWidth = 3.0
+            labelColor.layer.masksToBounds = true
+            print(index)
+            
+            let color = stringToColor(hexString: valor["colorHex"].stringValue)
+            
+            labelColor.layer.backgroundColor = color.cgColor
+            labelColor.layer.borderColor = color.cgColor
+            valorInicial = valorInicial + 19
+            cell.contenerdorView.addSubview(labelColor)
+            print(valor["colorHex"])
+        }
+        
+      
         
         cell.productoNombre.text = arrayProductos[indexPath.row].nombreProducto
         //COMO PLACEHOLDER USE UNA IMAGEN DE UNA BOLSA QUE DESCARGUE DE UNA URL
@@ -134,7 +158,8 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
                             //Ciclo para recorrer el array que nos devuelve la bsuqueda y agregar datos al arrayProducots
                             for i in 1...record.count {
                                
-                                self.arrayProductos.append(Productos.init(nombreProducto: record[i-1]["productDisplayName"].stringValue, precioNoDescuento: Double(record[i-1]["listPrice"].stringValue)!, precioDescuento: Double(record[i-1]["promoPrice"].stringValue)!, imagen: record[i-1]["smImage"].stringValue))
+                                //print(record[i-1]["variantsColor"][0]["colorHex"])
+                                self.arrayProductos.append(Productos.init(nombreProducto: record[i-1]["productDisplayName"].stringValue, precioNoDescuento: Double(record[i-1]["listPrice"].stringValue)!, precioDescuento: Double(record[i-1]["promoPrice"].stringValue)!, imagen: record[i-1]["smImage"].stringValue, arrayColor: record[i-1]["variantsColor"]))
                                 
                             }
                             self.paginas = self.paginas + 1
@@ -165,6 +190,32 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         arrayProductos.removeAll()
         mensaje = "Producto no encontrado prueba con otra busqueda"
         productoTableView.reloadData()
+    }
+    
+    //////////////////////////////
+    
+    //MARK: -Funciones para convertir el color hexadecimal a UIColor
+    
+    func stringToColor(hexString: String) -> UIColor {
+        // Convert hex string to an Int
+        let hexint = Int(self.intFromHexString(hexStr: hexString))
+        let rojo = CGFloat((hexint & 0xff0000) >> 16) / 255.0
+        let verde = CGFloat((hexint & 0xff00) >> 8) / 255.0
+        let azul = CGFloat((hexint & 0xff) >> 0) / 255.0
+        let alpha = 1.0
+        // Create color object, specifying alpha as well
+        return UIColor(red: rojo, green: verde, blue: azul, alpha: CGFloat(alpha))
+    }
+    
+    func intFromHexString(hexStr: String) -> UInt32 {
+        var hexInt: UInt32 = 0
+        // Create scanner
+        let scanner: Scanner = Scanner(string: hexStr)
+        // scanner eviat el simbolo #
+        scanner.charactersToBeSkipped = NSCharacterSet(charactersIn: "#") as CharacterSet
+        // Scan valor hex
+        scanner.scanHexInt32(&hexInt)
+        return hexInt
     }
    
 

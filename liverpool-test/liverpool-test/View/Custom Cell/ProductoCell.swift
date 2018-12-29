@@ -14,6 +14,7 @@ class ProductoCell: UITableViewCell {
     @IBOutlet weak var productoNombre: UILabel!
     @IBOutlet weak var precioNoDescuento: UILabel!
     @IBOutlet weak var precioDescuento: UILabel!
+    @IBOutlet weak var contenerdorView: UIView!
     
     
     override func awakeFromNib() {

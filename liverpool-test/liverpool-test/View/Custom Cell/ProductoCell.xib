@@ -12,21 +12,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customProductoCell" rowHeight="130" id="KGk-i7-Jjw" customClass="ProductoCell" customModule="liverpool_test" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customProductoCell" rowHeight="148" id="KGk-i7-Jjw" customClass="ProductoCell" customModule="liverpool_test" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="147.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2a4-9L-ha6">
-                        <rect key="frame" x="0.0" y="11" width="124" height="108"/>
+                        <rect key="frame" x="0.0" y="11" width="124" height="126"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="124" id="58f-5z-hUf"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmz-4o-bmw">
-                        <rect key="frame" x="132" y="11" width="180" height="103"/>
+                        <rect key="frame" x="132" y="11" width="180" height="121"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ne1-JO-CZy">
                                 <rect key="frame" x="7" y="38.5" width="158" height="15.5"/>
@@ -81,12 +81,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contenerdorView" destination="hmz-4o-bmw" id="IvF-de-1tj"/>
                 <outlet property="precioDescuento" destination="PI6-so-l4J" id="NBi-an-6Hz"/>
                 <outlet property="precioNoDescuento" destination="Ne1-JO-CZy" id="t71-YB-i7C"/>
                 <outlet property="productoImagen" destination="2a4-9L-ha6" id="Aei-aa-LyI"/>
                 <outlet property="productoNombre" destination="VjC-v5-vZd" id="Nij-TW-yRp"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="193.4032983508246"/>
+            <point key="canvasLocation" x="137.59999999999999" y="201.49925037481262"/>
         </tableViewCell>
     </objects>
 </document>

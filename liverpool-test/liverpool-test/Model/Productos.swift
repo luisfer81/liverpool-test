@@ -16,13 +16,15 @@ class Productos {
     var precioNoDescuento : Double = 0.0
     var precioDescuento : Double = 0.0
     var imagen : String = ""
+    var arrayColor : JSON
   
     //Inicializo Variables de Modelo
-    init(nombreProducto : String, precioNoDescuento: Double, precioDescuento: Double, imagen: String) {
+    init(nombreProducto : String, precioNoDescuento: Double, precioDescuento: Double, imagen: String, arrayColor: JSON) {
         self.nombreProducto = nombreProducto
         self.precioNoDescuento = precioNoDescuento
         self.precioDescuento = precioDescuento
         self.imagen = imagen
+        self.arrayColor = arrayColor
     }
 
 }
