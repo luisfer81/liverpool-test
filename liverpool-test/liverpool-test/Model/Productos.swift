@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class Productos {
     
@@ -15,6 +16,7 @@ class Productos {
     var precioNoDescuento : Double = 0.0
     var precioDescuento : Double = 0.0
     var imagen : String = ""
+  
     
     init(nombreProducto : String, precioNoDescuento: Double, precioDescuento: Double, imagen: String) {
         self.nombreProducto = nombreProducto

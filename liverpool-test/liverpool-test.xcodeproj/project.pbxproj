@@ -16,6 +16,7 @@
 		BC04C28821D6F76800017212 /* ProductosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28721D6F76800017212 /* ProductosController.swift */; };
 		BC04C28C21D6FFA100017212 /* ProductoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28A21D6FFA100017212 /* ProductoCell.swift */; };
 		BC04C28D21D6FFA100017212 /* ProductoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC04C28B21D6FFA100017212 /* ProductoCell.xib */; };
+		BC04C28F21D7517E00017212 /* OrdenamientoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28E21D7517E00017212 /* OrdenamientoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BC04C28721D6F76800017212 /* ProductosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductosController.swift; sourceTree = "<group>"; };
 		BC04C28A21D6FFA100017212 /* ProductoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCell.swift; sourceTree = "<group>"; };
 		BC04C28B21D6FFA100017212 /* ProductoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductoCell.xib; sourceTree = "<group>"; };
+		BC04C28E21D7517E00017212 /* OrdenamientoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdenamientoViewController.swift; sourceTree = "<group>"; };
 		C36A4DB15A1EEB68A8B2EFFF /* Pods-liverpool-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liverpool-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liverpool-test/Pods-liverpool-test.debug.xcconfig"; sourceTree = "<group>"; };
 		FECAB25B7D644EE0DF6E149D /* Pods-liverpool-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liverpool-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-liverpool-test/Pods-liverpool-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				BC04C28721D6F76800017212 /* ProductosController.swift */,
+				BC04C28E21D7517E00017212 /* OrdenamientoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				BC04C26F21D6F05900017212 /* AppDelegate.swift in Sources */,
 				BC04C28C21D6FFA100017212 /* ProductoCell.swift in Sources */,
 				BC04C28421D6F6B700017212 /* Productos.swift in Sources */,
+				BC04C28F21D7517E00017212 /* OrdenamientoViewController.swift in Sources */,
 				BC04C28821D6F76800017212 /* ProductosController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
