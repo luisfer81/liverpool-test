@@ -21,6 +21,10 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-qd-bKh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Peq-6s-kA3">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
@@ -51,6 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QIk-uL-dIM"/>
                     <connections>
+                        <outlet property="barraBusqueda" destination="eHp-qd-bKh" id="ClJ-Ih-tM6"/>
                         <outlet property="productoTableView" destination="Peq-6s-kA3" id="r7z-ef-fQZ"/>
                     </connections>
                 </viewController>
