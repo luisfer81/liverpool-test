@@ -30,6 +30,10 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         productoTableView.dataSource = self
         barraBusqueda.delegate = self
         
+        //gesto de tabla
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
+        productoTableView.addGestureRecognizer(tapGesture)
+        
         //Registro de ProductoCell.xib
         productoTableView.register(UINib(nibName: "ProductoCell", bundle: nil), forCellReuseIdentifier: "customProductoCell")
         
@@ -50,10 +54,14 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         // Verificar si el precio de descuento es mayo a cero estonces mostrarlo, si no solo mostrar el precio sin descuento
         if arrayProductos[indexPath.row].precioDescuento > 0 {
             cell.precioNoDescuento.isHidden = false
-            cell.precioDescuento.text = "\(arrayProductos[indexPath.row].precioDescuento)"
-            cell.precioNoDescuento.text = "\(arrayProductos[indexPath.row].precioNoDescuento)"
+            cell.precioDescuento.text = "$ \(arrayProductos[indexPath.row].precioDescuento)"
+            cell.precioNoDescuento.text = "$ \(arrayProductos[indexPath.row].precioNoDescuento)"
+            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "\(arrayProductos[indexPath.row].precioNoDescuento)")
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+            cell.precioNoDescuento.attributedText = attributeString
+
         } else {
-            cell.precioDescuento.text = "\(arrayProductos[indexPath.row].precioNoDescuento)"
+            cell.precioDescuento.text = "$ \(arrayProductos[indexPath.row].precioNoDescuento)"
             cell.precioNoDescuento.isHidden = true
         }
         
@@ -97,10 +105,16 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: - Metodos SearchBar
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        barraBusqueda.endEditing(true)
         arrayProductos.removeAll()
         busqueda = barraBusqueda.text!
         paginas = 1
         cargaDatos(pagina: paginas, busqueda: busqueda)
+    }
+    
+    //Funcion de termino de edicion de barra de busqueda al tocar la tabla
+    @objc func tableViewTapped() {
+        barraBusqueda.endEditing(true)
     }
     
     /////////////////////////////////////////
