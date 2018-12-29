@@ -8,5 +8,6 @@ target 'liverpool-test' do
   # Pods for liverpool-test
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SDWebImage'
 
 end

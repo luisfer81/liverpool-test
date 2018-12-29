@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bOQ-d5-Rgr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="REb-Cj-nq5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,13 +17,64 @@
                     <view key="view" contentMode="scaleToFill" id="cy8-AF-FFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-qd-bKh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Peq-6s-kA3">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductoCell" id="IEi-t5-CMn">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IEi-t5-CMn" id="BYZ-kL-gRt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eHp-qd-bKh" firstAttribute="top" secondItem="Gmt-Sf-lwB" secondAttribute="top" id="4nj-6N-UY5"/>
+                            <constraint firstAttribute="trailing" secondItem="eHp-qd-bKh" secondAttribute="trailing" id="BUe-gt-aL3"/>
+                            <constraint firstAttribute="bottom" secondItem="Peq-6s-kA3" secondAttribute="bottom" id="EvD-7s-Dv5"/>
+                            <constraint firstItem="eHp-qd-bKh" firstAttribute="leading" secondItem="cy8-AF-FFW" secondAttribute="leading" id="Nan-Wg-oa3"/>
+                            <constraint firstItem="Peq-6s-kA3" firstAttribute="leading" secondItem="cy8-AF-FFW" secondAttribute="leading" id="WdP-bs-Eux"/>
+                            <constraint firstAttribute="trailing" secondItem="Peq-6s-kA3" secondAttribute="trailing" id="Wim-CG-0Cb"/>
+                            <constraint firstItem="Peq-6s-kA3" firstAttribute="top" secondItem="eHp-qd-bKh" secondAttribute="bottom" id="qZR-cG-fwr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gmt-Sf-lwB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="QIk-uL-dIM"/>
+                    <connections>
+                        <outlet property="productoTableView" destination="Peq-6s-kA3" id="r7z-ef-fQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nl-43-J7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="149"/>
+            <point key="canvasLocation" x="976.79999999999995" y="148.87556221889056"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wga-on-iD4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="REb-Cj-nq5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="se3-bW-tOc">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bOQ-d5-Rgr" kind="relationship" relationship="rootViewController" id="Yo1-kx-nKW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpp-kh-x8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="148.87556221889056"/>
         </scene>
     </scenes>
 </document>

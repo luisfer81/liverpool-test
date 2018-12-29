@@ -14,6 +14,8 @@
 		BC04C28421D6F6B700017212 /* Productos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28321D6F6B700017212 /* Productos.swift */; };
 		BC04C28621D6F70A00017212 /* productosController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC04C28521D6F70A00017212 /* productosController.storyboard */; };
 		BC04C28821D6F76800017212 /* ProductosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28721D6F76800017212 /* ProductosController.swift */; };
+		BC04C28C21D6FFA100017212 /* ProductoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC04C28A21D6FFA100017212 /* ProductoCell.swift */; };
+		BC04C28D21D6FFA100017212 /* ProductoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC04C28B21D6FFA100017212 /* ProductoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		BC04C28321D6F6B700017212 /* Productos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productos.swift; sourceTree = "<group>"; };
 		BC04C28521D6F70A00017212 /* productosController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = productosController.storyboard; sourceTree = "<group>"; };
 		BC04C28721D6F76800017212 /* ProductosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductosController.swift; sourceTree = "<group>"; };
+		BC04C28A21D6FFA100017212 /* ProductoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCell.swift; sourceTree = "<group>"; };
+		BC04C28B21D6FFA100017212 /* ProductoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductoCell.xib; sourceTree = "<group>"; };
 		C36A4DB15A1EEB68A8B2EFFF /* Pods-liverpool-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liverpool-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-liverpool-test/Pods-liverpool-test.debug.xcconfig"; sourceTree = "<group>"; };
 		FECAB25B7D644EE0DF6E149D /* Pods-liverpool-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-liverpool-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-liverpool-test/Pods-liverpool-test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +97,7 @@
 		BC04C28121D6F62A00017212 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC04C28921D6FF6900017212 /* Custom Cell */,
 				BC04C27721D6F05B00017212 /* LaunchScreen.storyboard */,
 				BC04C28521D6F70A00017212 /* productosController.storyboard */,
 			);
@@ -105,6 +110,15 @@
 				BC04C28721D6F76800017212 /* ProductosController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC04C28921D6FF6900017212 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC04C28A21D6FFA100017212 /* ProductoCell.swift */,
+				BC04C28B21D6FFA100017212 /* ProductoCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		C5B4F1CD5A1733BEF751B753 /* Frameworks */ = {
@@ -176,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC04C28621D6F70A00017212 /* productosController.storyboard in Resources */,
+				BC04C28D21D6FFA100017212 /* ProductoCell.xib in Resources */,
 				BC04C27921D6F05B00017212 /* LaunchScreen.storyboard in Resources */,
 				BC04C27621D6F05B00017212 /* Assets.xcassets in Resources */,
 			);
@@ -216,6 +231,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-liverpool-test/Pods-liverpool-test-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -223,6 +239,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC04C26F21D6F05900017212 /* AppDelegate.swift in Sources */,
+				BC04C28C21D6FFA100017212 /* ProductoCell.swift in Sources */,
 				BC04C28421D6F6B700017212 /* Productos.swift in Sources */,
 				BC04C28821D6F76800017212 /* ProductosController.swift in Sources */,
 			);
