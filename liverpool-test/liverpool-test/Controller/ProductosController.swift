@@ -91,7 +91,7 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.productoNombre.text = arrayProductos[indexPath.row].nombreProducto
         //COMO PLACEHOLDER USE UNA IMAGEN DE UNA BOLSA QUE DESCARGUE DE UNA URL
-        cell.productoImagen.sd_setImage(with: URL(string: arrayProductos[indexPath.row].imagen), placeholderImage: UIImage(named: "prueba.png"))
+        cell.productoImagen.sd_setImage(with: URL(string: arrayProductos[indexPath.row].imagen), placeholderImage: UIImage(named: "cargando.png"))
         
         return cell
     }
@@ -119,7 +119,7 @@ class ProductosController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //willDisplay Table
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let ultimoDato = arrayProductos.count - 1
+        let ultimoDato = arrayProductos.count - 3
         if indexPath.row == ultimoDato {
             cargaDatos(pagina: paginas, busqueda: busqueda)
         }
